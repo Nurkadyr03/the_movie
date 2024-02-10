@@ -30,9 +30,9 @@ class MyApp extends StatelessWidget {
         '/main_screen/movie_details_widget':(context){
           final arguments=ModalRoute.of(context)?.settings.arguments;
           if(arguments is int){
-            return MovieDetailsWidgetState(movieId:arguments);
+            return MovieDetailsWidget(movieId:arguments);
           }
-          return MovieDetailsWidgetState(movieId: 0);
+          return MovieDetailsWidget(movieId: 0);
         }
       },
       initialRoute: '/auth',

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie/widgets/movie_details/movie_details_main_info_widget.dart';
 
-class MovieDetailsWidgetState extends StatefulWidget {
+class MovieDetailsWidget extends StatefulWidget {
   final movieId;
-  const MovieDetailsWidgetState({Key? key, required this.movieId})
+  const MovieDetailsWidget({Key? key, required this.movieId})
       : super(key: key);
 
   @override
-  State<MovieDetailsWidgetState> createState() =>
-      _MovieDetailsWidgetStateState();
+  State<MovieDetailsWidget> createState() =>
+      _MovieDetailsWidgetState();
 }
 
-class _MovieDetailsWidgetStateState extends State<MovieDetailsWidgetState> {
+class _MovieDetailsWidgetState extends State<MovieDetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,10 +21,13 @@ class _MovieDetailsWidgetStateState extends State<MovieDetailsWidgetState> {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: ListView(
-        children: [
-          MovieDetailsMainInfoWidget(),
-        ],
+      body: ColoredBox(
+        color:Color.fromRGBO(23, 24,27, 1.0),
+        child: ListView(
+          children: [
+            MovieDetailsMainInfoWidget(),
+          ],
+        ),
       ),
     );
   }
