@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:the_movie/appImages/app_images.dart';
+import 'package:the_movie/widgets/elements/radial_percent_widget.dart';
 
 class MovieDetailsMainInfoWidget extends StatelessWidget {
   const MovieDetailsMainInfoWidget({super.key});
@@ -70,28 +72,23 @@ class _TopPostersWidget extends StatelessWidget {
     return Stack(
       //здесь будет две фото один сверху другого
       children: [
-        Container(
-          child:
-              Center(child: Text("fhoto", style: TextStyle(color: Colors.red))),
-          color: Colors.green,
-          height: 200,
+      
+         SizedBox(
           width: double.infinity,
-        )
-        //  SizedBox(
-        //   width: double.infinity,
-        //   height: double.infinity,
-        //     child: Image(
-        //       image: AssetImage(AppImages.backImage  ),
-        //     ),
-        //   ),
-        //  Positioned(
-        //   top:20,
-        //   left: 20,
-        //   bottom: 20,
-        //    child: Image(
-        //     image: AssetImage(AppImages.??????),
-        //            ),
-        //  ),
+          
+            child: Image(
+              image: AssetImage(AppImages.backImage  ),
+              fit: BoxFit.cover,
+            ),
+          ),
+         Positioned(
+          top:20,
+          left: 20,
+          bottom: 20,
+           child: Image(
+            image: AssetImage(AppImages.image),
+                   ),
+         ),
       ],
     );
   }
@@ -133,17 +130,21 @@ class _ScoreWidget extends StatelessWidget {
           onPressed: () {},
           child: Row(
             children: [
-              // SizedBox(
-              //   width: 40,
-              //   height: 40,
-              //   child: _RadialPercentWidget(
-              //     percent: 0.72,
-              //     fillColor: Color.fromARGB(255, 10, 23, 25),
-              //     LineColor: Color.fromARGB(255, 37, 203, 103),
-              //     freeColor: Color.fromARGB(255, 25, 54, 31),
-              //     lineWidth: 3,
-              //   ),
-              // ),
+              SizedBox(
+                width: 40,
+                height: 40,
+                child: RadialPercentWidget(
+                  child: Text(
+                    "72",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  percent: 0.72,
+                  fillColor: Color.fromARGB(255, 10, 23, 25),
+                  lineColor: Color.fromARGB(255, 37, 203, 103),
+                  freeColor: Color.fromARGB(255, 25, 54, 31),
+                  lineWidth: 3,
+                ),
+              ),
               const SizedBox(width: 10),
               Text("Score User", style: TextStyle(color: Colors.white)),
             ],
@@ -154,7 +155,7 @@ class _ScoreWidget extends StatelessWidget {
           onPressed: () {},
           child: Row(
             children: [
-             const Icon(Icons.play_arrow),
+              const Icon(Icons.play_arrow),
               Text("Play thrayler", style: TextStyle(color: Colors.white)),
             ],
           ),
